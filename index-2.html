@@ -1,0 +1,20 @@
+
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Prank Proposal</title>
+<style>
+body{margin:0;overflow:hidden;font-family:Arial;background:linear-gradient(45deg,#ff5f9e,#8a2be2);display:flex;align-items:center;justify-content:center;height:100vh}
+.card{background:#fff;padding:30px;border-radius:20px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+h1{color:#e91e63;text-shadow:0 0 10px #ffb6d5}
+button{padding:12px 24px;font-size:20px;border:0;border-radius:12px;margin:10px;cursor:pointer}
+#yes{background:#28a745;color:#fff} #no{background:#f44336;color:#fff;position:absolute}
+.heart{position:fixed;color:#ffd1e8;animation:up 8s linear infinite}
+@keyframes up{from{transform:translateY(100vh)}to{transform:translateY(-10vh)}}
+</style></head><body>
+<div class="card"><h1>💖 Will You Marry Me? 💖</h1><p>Choose wisely 😄</p><button id=yes>Yes ❤️</button><button id=no>No 💔</button></div>
+<script>
+for(let i=0;i<30;i++){let h=document.createElement('div');h.className='heart';h.innerHTML='❤';h.style.left=Math.random()*100+'vw';h.style.fontSize=(15+Math.random()*25)+'px';h.style.animationDelay=(Math.random()*8)+'s';document.body.appendChild(h);}
+const msgs=["😜 Are you sure?","😂 Nope!","🥺 Think again!","❤️ No is unavailable!"];let c=0;
+function mv(){no.style.left=Math.random()*(innerWidth-100)+'px';no.style.top=Math.random()*(innerHeight-60)+'px';if(c<msgs.length)no.textContent=msgs[c++];}
+no.onmouseover=mv;no.ontouchstart=(e)=>{e.preventDefault();mv();}
+yes.onclick=()=>{document.body.innerHTML="<div style='display:flex;height:100vh;align-items:center;justify-content:center;flex-direction:column;color:white'><h1>🎉😂 You Got Pranked! 😂🎉</h1><h2>Thanks for pressing YES 😆</h2></div>";}
+</script></body></html>
